@@ -2,11 +2,15 @@ import pygame
 import sys
 import random
 
-
 pygame.init()
-display_width = 1366
-display_height = 768
-gameDisplay = pygame.display.set_mode((display_width, display_height))#,pygame.FULLSCREEN,32)
+display_width = 2560#1366
+display_height = 1387#768
+# gameDisplay = pygame.display.set_mode((display_width, display_height))#,pygame.FULLSCREEN,32)
+gameDisplay = pygame.display.set_mode((0, 0),pygame.RESIZABLE)
+print(pygame.display.get_window_size())
+display_width, display_height = pygame.display.get_window_size()
+
+
 pygame.display.set_caption(' SLITHERING SNAKE ')
 bg = pygame.image.load('bg4.1.png')
 bg1 = pygame.image.load('bg3.1.png')
@@ -20,8 +24,8 @@ FPS = 15
 black=(0,0,0)
 white=(255,255,255)
 red=(255,0,0,155)
-green=(0~,155,0)
-blue=(0,0,255,100)~
+green=(0,155,0)
+blue=(0,0,255,100)
 
 #function to QUIT  or  RESTART
 def message_to_screen(text , color , size , y_displace = 0) :
@@ -138,7 +142,7 @@ def game_loop():
       x = display_width/2
       y = display_height/2
 
-      apple_x =round( random.randrange(0 , (display_width - block_size)))#/10.0)*10.0
+      apple_x = round( random.randrange(0 , (display_width - block_size)))#/10.0)*10.0
       apple_y =  round(random.randrange(0, (display_height - block_size)))#/10.0)*10.0
 
       x_change = 0
